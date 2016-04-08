@@ -20,6 +20,10 @@
 @property (nonatomic) BOOL shouldShowIncompatibleApps;
 @property (nonatomic) BOOL shouldShowRating;
 
+@property (nonatomic, strong) UIColor *darkBackgroundColor;
+@property (nonatomic, strong) UIColor *lightBackgroundColor;
+@property (nonatomic, strong) UIColor *foregroundColor;
+
 // A list of bundle ids or app ids of apps that should not be displayed.
 @property (nonatomic, copy) NSArray *blockedApps;
 

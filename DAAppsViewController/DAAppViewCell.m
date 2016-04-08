@@ -21,6 +21,7 @@ static NSNumberFormatter *_decimalNumberFormatter = nil;
 @property (nonatomic, strong) UILabel *noRatingsLabel;
 @property (nonatomic, strong) UILabel *ratingsLabel;
 @property (nonatomic, strong) UIButton *purchaseButton;
+@property (strong, nonatomic) UIColor *foregroundColor;
 
 - (void)purchaseButton:(UIButton *)button;
 
@@ -68,19 +69,12 @@ static NSNumberFormatter *_decimalNumberFormatter = nil;
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.foregroundColor = [UIColor whiteColor];
+
         self.selectionStyle = UITableViewCellSelectionStyleGray;
         if ([self respondsToSelector:@selector(setSeparatorInset:)]) {
             self.separatorInset = UIEdgeInsetsZero;
         }
-        
-        UIView *cellTopWhiteLine = [[UIView alloc] init];
-        cellTopWhiteLine.frame = (CGRect) {
-            .size.width = self.frame.size.width,
-            .size.height = 1.0f
-        };
-        cellTopWhiteLine.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        cellTopWhiteLine.backgroundColor = [UIColor whiteColor];
-        [self addSubview:cellTopWhiteLine];
         
         UIImageView *cellImageShadowView = [[UIImageView alloc] init];
         cellImageShadowView.frame = (CGRect) {
@@ -106,13 +100,13 @@ static NSNumberFormatter *_decimalNumberFormatter = nil;
         _nameLabel = [[UILabel alloc] init];
         _nameLabel.font = [UIFont systemFontOfSize:12.0f];
         _nameLabel.backgroundColor = [UIColor clearColor];
-        _nameLabel.textColor = [UIColor blackColor];
+        _nameLabel.textColor = self.foregroundColor;
         [self addSubview:_nameLabel];
         
         _genreLabel = [[UILabel alloc] init];
         _genreLabel.font = [UIFont systemFontOfSize:10.0f];
         _genreLabel.backgroundColor = [UIColor clearColor];
-        _genreLabel.textColor = [UIColor darkGrayColor];
+        _genreLabel.textColor = self.foregroundColor;
         [self addSubview:_genreLabel];
         
         _starImageView = [[UIImageView alloc] init];
@@ -128,7 +122,7 @@ static NSNumberFormatter *_decimalNumberFormatter = nil;
         
         _noRatingsLabel = [[UILabel alloc] init];
         _noRatingsLabel.font = [UIFont systemFontOfSize:10.0f];
-        _noRatingsLabel.textColor = [UIColor darkGrayColor];
+        _noRatingsLabel.textColor = self.foregroundColor;
         _noRatingsLabel.backgroundColor = [UIColor clearColor];
         _noRatingsLabel.text = NSLocalizedString(@"No Ratings",);
         _noRatingsLabel.hidden = YES;
@@ -142,7 +136,7 @@ static NSNumberFormatter *_decimalNumberFormatter = nil;
         
         _ratingsLabel = [[UILabel alloc] init];
         _ratingsLabel.font = [UIFont systemFontOfSize:10.0f];
-        _ratingsLabel.textColor = [UIColor darkGrayColor];
+        _ratingsLabel.textColor = self.foregroundColor;
         _ratingsLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:_ratingsLabel];
         
@@ -156,7 +150,7 @@ static NSNumberFormatter *_decimalNumberFormatter = nil;
         _purchaseButton.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin;
         
         if (DA_IS_IOS7) {
-            UIColor *titleColor = [UIColor colorWithRed:0.0f green:0.49f blue:0.96f alpha:1.0f];
+            UIColor *titleColor = self.foregroundColor;
             [_purchaseButton setTitleColor:titleColor forState:UIControlStateNormal];
             [_purchaseButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
 

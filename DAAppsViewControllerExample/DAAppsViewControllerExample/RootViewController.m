@@ -137,6 +137,9 @@
 {
     DAAppsViewController *appsViewController = [[DAAppsViewController alloc] init];
     appsViewController.shouldShowRating = NO;
+    appsViewController.darkBackgroundColor = [UIColor blackColor];
+    appsViewController.lightBackgroundColor = [UIColor darkGrayColor];
+    appsViewController.foregroundColor = [UIColor whiteColor];
     
     switch (indexPath.section)
     {
