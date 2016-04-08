@@ -26,7 +26,6 @@
 @property (nonatomic, readonly) CGFloat userRating;
 @property (nonatomic, readonly) NSString *minimumOsVersion;
 @property (nonatomic, readonly) BOOL isUniversal;
-
 @property (nonatomic, readonly) BOOL isCompatible;
 
 - (id)initWithResult:(NSDictionary *)result;

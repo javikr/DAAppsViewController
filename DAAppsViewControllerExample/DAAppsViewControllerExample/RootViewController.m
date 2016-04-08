@@ -136,6 +136,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DAAppsViewController *appsViewController = [[DAAppsViewController alloc] init];
+    appsViewController.shouldShowRating = NO;
+    
     switch (indexPath.section)
     {
         case 0:

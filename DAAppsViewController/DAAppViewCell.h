@@ -12,5 +12,6 @@
 @interface DAAppViewCell : UITableViewCell
 
 @property (nonatomic, copy) DAAppObject *appObject;
+@property (nonatomic, readwrite) BOOL shouldShowRating;
 
 @end

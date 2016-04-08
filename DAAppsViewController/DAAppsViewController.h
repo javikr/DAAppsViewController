@@ -18,6 +18,7 @@
 @property (nonatomic, copy) NSString *pageTitle;
 
 @property (nonatomic) BOOL shouldShowIncompatibleApps;
+@property (nonatomic) BOOL shouldShowRating;
 
 // A list of bundle ids or app ids of apps that should not be displayed.
 @property (nonatomic, copy) NSArray *blockedApps;

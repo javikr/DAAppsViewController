@@ -238,6 +238,7 @@
     if (!cell) {
         cell = [[DAAppViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    cell.shouldShowRating = self.shouldShowRating;
     cell.appObject = [self.compatibleAppsArray objectAtIndex:indexPath.row];
     return cell;
 }
