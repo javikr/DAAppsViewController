@@ -41,27 +41,27 @@ static NSNumberFormatter *_decimalNumberFormatter = nil;
                                                      name:UIApplicationDidReceiveMemoryWarningNotification
                                                    object:nil];
         
-        NSInteger numberOfStars = 11;
-        NSMutableArray *starRatingImages = [[NSMutableArray alloc] initWithCapacity:numberOfStars];
-        UIImage *starsImageSheet = [UIImage imageNamed:@"DAAppsViewController.bundle/DAStarsImage"];
-        CGSize starRatingImageSize = (CGSize) {
-            .width = starsImageSheet.size.width,
-            .height = starsImageSheet.size.height / (CGFloat)numberOfStars
-        };
-        for (NSInteger starIndex = numberOfStars - 1; starIndex >= 0; starIndex--) {
-            UIGraphicsBeginImageContextWithOptions(starRatingImageSize, NO, 0.0f);
-            CGPoint starPoint = (CGPoint) {
-                .y = -starRatingImageSize.height * starIndex
-            };
-            [starsImageSheet drawAtPoint:starPoint];
-            UIImage *starRatingImage = UIGraphicsGetImageFromCurrentImageContext();
-            UIGraphicsEndImageContext();
-            [starRatingImages addObject:starRatingImage];
-        }
-        _starRatingImages = starRatingImages;
-
-        _decimalNumberFormatter = [[NSNumberFormatter alloc] init];
-        [_decimalNumberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+//        NSInteger numberOfStars = 11;
+//        NSMutableArray *starRatingImages = [[NSMutableArray alloc] initWithCapacity:numberOfStars];
+//        UIImage *starsImageSheet = [UIImage imageNamed:@"DAAppsViewController.bundle/DAStarsImage"];
+//        CGSize starRatingImageSize = (CGSize) {
+//            .width = starsImageSheet.size.width,
+//            .height = starsImageSheet.size.height / (CGFloat)numberOfStars
+//        };
+//        for (NSInteger starIndex = numberOfStars - 1; starIndex >= 0; starIndex--) {
+//            UIGraphicsBeginImageContextWithOptions(starRatingImageSize, NO, 0.0f);
+//            CGPoint starPoint = (CGPoint) {
+//                .y = -starRatingImageSize.height * starIndex
+//            };
+//            [starsImageSheet drawAtPoint:starPoint];
+//            UIImage *starRatingImage = UIGraphicsGetImageFromCurrentImageContext();
+//            UIGraphicsEndImageContext();
+//            [starRatingImages addObject:starRatingImage];
+//        }
+//        _starRatingImages = starRatingImages;
+//
+//        _decimalNumberFormatter = [[NSNumberFormatter alloc] init];
+//        [_decimalNumberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
     }
 }
 
